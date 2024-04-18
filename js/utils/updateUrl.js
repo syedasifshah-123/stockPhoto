@@ -1,0 +1,25 @@
+/**
+ * @copyright codewithasif 2023
+ * @author asif <codewithasif@gmail.com>
+ */
+
+"use strict";
+
+import { urlEncode } from "./urlEncode.js";
+
+
+/**
+ * Update url
+ * @param {Object} filterObj Filter object
+ * @param {String} searchType Search type eg. 'videos' or 'photos'
+ */
+
+
+export const updateUrl = (filterObj, searchType) => {
+    setTimeout(() => {
+        const /** {String} */ root = window.location.origin;
+        const /** {String} */ searchQuery = urlEncode(filterObj);
+
+        window.location = `${root}/pages/${searchType}/${searchType}.html?${searchQuery}`;
+    }, 500);
+}
